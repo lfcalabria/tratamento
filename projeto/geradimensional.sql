@@ -37,6 +37,7 @@ CREATE TABLE dim_tempo (
 -- Armazena informações sobre as categorias de produtos
 CREATE TABLE dim_categoria (
     id BIGINT AUTO_INCREMENT PRIMARY KEY,
+	id_transacional BIGINT NOT NULL,
     categoria VARCHAR(200) NOT NULL
 );
 
@@ -44,6 +45,7 @@ CREATE TABLE dim_categoria (
 -- Armazena informações detalhadas sobre os produtos
 CREATE TABLE dim_produto (
     id BIGINT AUTO_INCREMENT PRIMARY KEY,
+	id_transacional BIGINT NOT NULL,
     produto VARCHAR(200) NOT NULL,
     preco_unitario FLOAT,
     descontinuado TINYINT(1)
@@ -53,6 +55,7 @@ CREATE TABLE dim_produto (
 -- Armazena informações sobre os vendedores
 CREATE TABLE dim_vendedor (
     id BIGINT AUTO_INCREMENT PRIMARY KEY,
+	id_transacional BIGINT NOT NULL,
     nome VARCHAR(200) NOT NULL,
     sexo_codigo CHAR(1),
     sexo_descricao VARCHAR(45),
@@ -65,6 +68,7 @@ CREATE TABLE dim_vendedor (
 -- Armazena informações sobre países
 CREATE TABLE dim_pais (
     id BIGINT AUTO_INCREMENT PRIMARY KEY,
+	id_transacional BIGINT NOT NULL,
     sigla CHAR(2) NOT NULL,
     pais VARCHAR(100) NOT NULL
 );
@@ -73,6 +77,7 @@ CREATE TABLE dim_pais (
 -- Armazena informações sobre os clientes
 CREATE TABLE dim_cliente (
     id BIGINT AUTO_INCREMENT PRIMARY KEY,
+	id_transacional BIGINT NOT NULL,
     nome_cliente VARCHAR(200) NOT NULL,
 	sexo_codigo CHAR(1),
     nacionalidade varchar(100), 
@@ -90,6 +95,7 @@ CREATE TABLE dim_cliente (
 -- Armazena informações sobre as empresas transportadoras
 CREATE TABLE dim_transportadora (
     id BIGINT AUTO_INCREMENT PRIMARY KEY,
+	id_transacional BIGINT NOT NULL,
     transportadora VARCHAR(200) NOT NULL,
     contato VARCHAR(200)
 );
@@ -98,6 +104,7 @@ CREATE TABLE dim_transportadora (
 -- Armazena informações sobre os fornecedores
 CREATE TABLE dim_fornecedor (
     id BIGINT AUTO_INCREMENT PRIMARY KEY,
+	id_transacional BIGINT NOT NULL,
     fornecedor VARCHAR(200) NOT NULL,
     contato VARCHAR(200)
 );
